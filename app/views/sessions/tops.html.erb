@@ -1,0 +1,7 @@
+<% if logged_in? %>
+  <h2>DIVE<br>INTO</h2>
+  <h3><%= current_user.name %>さん</h3>
+  <%= link_to 'ログアウトはこちら', session_path(current_user.id), method: :delete, data: { confirm: 'ログアウトしますか？' } %>
+<% else %>
+  <h2><%= link_to 'ログインはこちら', new_session_path %></h2>
+<% end %>
